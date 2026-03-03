@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vegan Bites — Delicious Plant-Based Recipes</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">Vegan Bites</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#categories" class="nav-link">Categories</a></li>
+        <li><a href="#recipes" class="nav-link">Recipes</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#newsletter" class="nav-link">Subscribe</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge">🌱 100% Plant-Based</span>
+      <h1 class="hero-title">Discover Delicious<br><span class="highlight">Vegan Recipes</span></h1>
+      <p class="hero-subtitle">Explore our collection of mouthwatering plant-based recipes that are good for you and the planet. From quick breakfasts to indulgent desserts.</p>
+      <div class="hero-actions">
+        <a href="#recipes" class="btn btn-primary">Explore Recipes</a>
+        <a href="#categories" class="btn btn-outline">Browse Categories</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Recipes</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">12</span>
+          <span class="stat-label">Categories</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">10k+</span>
+          <span class="stat-label">Happy Cooks</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Browse By</span>
+        <h2 class="section-title">Recipe Categories</h2>
+        <p class="section-subtitle">Find the perfect recipe for any meal of the day</p>
+      </div>
+      <div class="category-grid">
+        <div class="category-card" data-category="breakfast">
+          <span class="category-emoji">🌅</span>
+          <h3>Breakfast</h3>
+          <p>Start your day right</p>
+        </div>
+        <div class="category-card" data-category="lunch">
+          <span class="category-emoji">🥗</span>
+          <h3>Lunch</h3>
+          <p>Midday fuel</p>
+        </div>
+        <div class="category-card" data-category="dinner">
+          <span class="category-emoji">🍽️</span>
+          <h3>Dinner</h3>
+          <p>Hearty evening meals</p>
+        </div>
+        <div class="category-card" data-category="desserts">
+          <span class="category-emoji">🍰</span>
+          <h3>Desserts</h3>
+          <p>Sweet plant-based treats</p>
+        </div>
+        <div class="category-card" data-category="smoothies">
+          <span class="category-emoji">🥤</span>
+          <h3>Smoothies</h3>
+          <p>Refreshing blends</p>
+        </div>
+        <div class="category-card" data-category="snacks">
+          <span class="category-emoji">🥜</span>
+          <h3>Snacks</h3>
+          <p>Quick bites</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Recipes Section -->
+  <section class="recipes" id="recipes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Best</span>
+        <h2 class="section-title">Featured Recipes</h2>
+        <p class="section-subtitle">Handpicked favorites from our community</p>
+      </div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+        <button class="filter-btn" data-filter="lunch">Lunch</button>
+        <button class="filter-btn" data-filter="dinner">Dinner</button>
+        <button class="filter-btn" data-filter="desserts">Desserts</button>
+      </div>
+      <div class="recipe-grid" id="recipeGrid">
+        <!-- Recipe cards injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Mission</span>
+        <h2 class="section-title">Why Vegan Bites?</h2>
+        <p class="section-subtitle">We believe delicious food can also be kind to animals and the planet</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <span class="about-icon">🌍</span>
+          <h3>Planet Friendly</h3>
+          <p>Plant-based eating reduces your carbon footprint by up to 73%. Every meal makes a difference.</p>
+        </div>
+        <div class="about-card">
+          <span class="about-icon">❤️</span>
+          <h3>Heart Healthy</h3>
+          <p>Vegan diets are linked to lower cholesterol, blood pressure, and risk of heart disease.</p>
+        </div>
+        <div class="about-card">
+          <span class="about-icon">🐾</span>
+          <h3>Animal Kind</h3>
+          <p>No animals are harmed. Every recipe is 100% cruelty-free and compassionate.</p>
+        </div>
+        <div class="about-card">
+          <span class="about-icon">👨‍🍳</span>
+          <h3>Easy to Follow</h3>
+          <p>Step-by-step instructions with common ingredients. Perfect for beginners and pros alike.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <span class="newsletter-emoji">📬</span>
+        <h2>Get Weekly Recipes</h2>
+        <p>Subscribe to our newsletter and receive fresh vegan recipes every week, straight to your inbox.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <span class="newsletter-note">No spam, ever. Unsubscribe anytime.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <span class="logo-icon">🌿</span>
+            <span class="logo-text">Vegan Bites</span>
+          </a>
+          <p>Delicious plant-based recipes for a healthier you and a happier planet.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+            <a href="#" class="social-link" aria-label="YouTube">🎥</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#recipes">Recipes</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#recipes">Breakfast</a></li>
+            <li><a href="#recipes">Lunch</a></li>
+            <li><a href="#recipes">Dinner</a></li>
+            <li><a href="#recipes">Desserts</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Vegan Bites. All rights reserved. Made with 💚 for the planet.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Recipe Modal -->
+  <div class="modal-overlay" id="recipeModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <span class="modal-emoji" id="modalEmoji"></span>
+        <div>
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <div class="modal-meta" id="modalMeta"></div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>🧾 Ingredients</h3>
+          <ul class="modal-ingredients" id="modalIngredients"></ul>
+        </div>
+        <div class="modal-section">
+          <h3>📝 Instructions</h3>
+          <ol class="modal-instructions" id="modalInstructions"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
