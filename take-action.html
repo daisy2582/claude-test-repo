@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Take Action — Vegan Bites</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar page-nav" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">Vegan Bites</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle">Our Mission ▾</button>
+          <div class="nav-dropdown-menu">
+            <a href="animal-cruelty.html">Animal Cruelty Awareness</a>
+            <a href="how-we-support.html">How We Support</a>
+            <a href="take-action.html">Take Action</a>
+            <a href="animal-stories.html">Animal Stories</a>
+            <a href="facts-and-myths.html">Facts & Myths</a>
+            <a href="resources.html">Resources & Partners</a>
+          </div>
+        </li>
+        <li><a href="our-impact.html" class="nav-link">Our Impact</a></li>
+        <li><a href="index.html#recipes" class="nav-link">Recipes</a></li>
+      </ul>
+      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="page-hero hero-teal">
+    <div class="hero-content">
+      <span class="hero-badge">Your Power to Change</span>
+      <h1 class="hero-title">Take Action<br>For Animals</h1>
+      <p class="hero-subtitle">You do not need to change everything overnight. Small, consistent choices create massive impact. Here is how you can start making a difference today.</p>
+    </div>
+  </section>
+
+  <!-- Action Cards -->
+  <section class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get Started</span>
+        <h2 class="section-title">Ways You Can Help</h2>
+        <p class="section-subtitle">Choose the actions that resonate with you and start where you are</p>
+      </div>
+      <div class="action-grid">
+        <div class="action-card">
+          <span class="action-emoji">🌱</span>
+          <h3>Go Plant-Based</h3>
+          <p>The single most impactful choice you can make. Start with Meatless Mondays, try our beginner recipes, and gradually replace animal products with delicious plant-based alternatives. Every meal matters.</p>
+          <a href="index.html#recipes" class="btn btn-primary">Explore Recipes</a>
+        </div>
+        <div class="action-card">
+          <span class="action-emoji">🙋</span>
+          <h3>Volunteer</h3>
+          <p>Donate your time at local animal sanctuaries, food banks distributing plant-based meals, or community gardens. Hands-on experience deepens your connection to the cause and inspires others.</p>
+          <a href="resources.html" class="btn btn-outline">Find Opportunities</a>
+        </div>
+        <div class="action-card">
+          <span class="action-emoji">📢</span>
+          <h3>Speak Up</h3>
+          <p>Share what you learn with friends and family. Post on social media, write to your representatives about animal welfare laws, and support campaigns for cage-free and cruelty-free legislation.</p>
+          <a href="facts-and-myths.html" class="btn btn-outline">Learn the Facts</a>
+        </div>
+        <div class="action-card">
+          <span class="action-emoji">💚</span>
+          <h3>Donate</h3>
+          <p>Financial support fuels rescue operations, legal advocacy, and undercover investigations. Even small monthly donations add up to transformative impact for animal welfare organizations.</p>
+          <a href="how-we-support.html" class="btn btn-outline">See Our Partners</a>
+        </div>
+        <div class="action-card">
+          <span class="action-emoji">🛒</span>
+          <h3>Shop Consciously</h3>
+          <p>Choose cruelty-free products, check labels for hidden animal ingredients, and support brands that align with your values. Your purchasing power sends a message to the entire industry.</p>
+          <a href="resources.html" class="btn btn-outline">Cruelty-Free Guide</a>
+        </div>
+        <div class="action-card">
+          <span class="action-emoji">🎓</span>
+          <h3>Educate Others</h3>
+          <p>Host a screening of a documentary, cook a plant-based meal for friends, or share our resources with your community. Education is the seed of compassion — plant it everywhere you go.</p>
+          <a href="animal-cruelty.html" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pledge Section -->
+  <section class="pledge-section">
+    <div class="container">
+      <h2>Take the 30-Day Plant-Based Pledge</h2>
+      <p>Join thousands of others who have committed to trying plant-based eating for 30 days. We will support you every step of the way with recipes, tips, and community encouragement.</p>
+      <form class="pledge-form" id="pledgeForm">
+        <input type="text" placeholder="Enter your first name" required aria-label="First name">
+        <button type="submit" class="btn btn-primary">I Pledge!</button>
+      </form>
+      <p class="pledge-counter">You + <strong id="pledgeCount">1,247</strong> others have pledged</p>
+    </div>
+  </section>
+
+  <!-- Tips for Beginners -->
+  <section class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Getting Started</span>
+        <h2 class="section-title">Tips for Your Plant-Based Journey</h2>
+        <p class="section-subtitle">Practical advice to make your transition smooth and enjoyable</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="info-emoji">📋</span>
+          <h3>Start with What You Know</h3>
+          <p>Many of your favorite meals are already vegan or easily adapted. Pasta with marinara, stir-fries, bean burritos, and curries are all naturally plant-based. Build on familiar flavors.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-emoji">🥘</span>
+          <h3>Meal Prep on Sundays</h3>
+          <p>Spend an hour prepping grains, chopping vegetables, and making sauces for the week. Having ready-to-go components makes weeknight cooking fast and eliminates the temptation to order out.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-emoji">🧪</span>
+          <h3>Experiment with Flavors</h3>
+          <p>Explore cuisines that are naturally plant-heavy: Indian, Thai, Ethiopian, Mexican, and Mediterranean. You will discover incredible flavors you never knew existed.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-emoji">🤗</span>
+          <h3>Be Kind to Yourself</h3>
+          <p>Perfection is not the goal — progress is. If you slip up, do not give up. Every plant-based meal you eat is a victory for animals, your health, and the planet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <h2>Every Choice Creates Ripples</h2>
+    <p>When you choose a plant-based meal, you inspire others. When you speak up for animals, you shift culture. Your actions matter more than you know.</p>
+    <a href="index.html#recipes" class="btn btn-primary">Start Cooking</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-icon">🌿</span>
+            <span class="logo-text">Vegan Bites</span>
+          </a>
+          <p>Delicious plant-based recipes for a healthier you and a happier planet.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+            <a href="#" class="social-link" aria-label="YouTube">🎥</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#recipes">Recipes</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="our-impact.html">Our Impact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Our Mission</h4>
+          <ul>
+            <li><a href="animal-cruelty.html">Animal Cruelty</a></li>
+            <li><a href="how-we-support.html">How We Support</a></li>
+            <li><a href="take-action.html">Take Action</a></li>
+            <li><a href="animal-stories.html">Animal Stories</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Learn More</h4>
+          <ul>
+            <li><a href="facts-and-myths.html">Facts & Myths</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Vegan Bites. All rights reserved. Made with 💚 for the planet.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <div class="toast" id="toast"></div>
+  <script src="js/pages.js"></script>
+</body>
+</html>

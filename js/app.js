@@ -90,7 +90,7 @@ const recipes = [
     instructions: [
       "Cook pasta according to package directions. Reserve 1 cup of pasta water before draining.",
       "Blend soaked cashews with 1/2 cup water until completely smooth and creamy.",
-      "Heat olive oil in a large pan. Sauté garlic for 1 minute until fragrant.",
+      "Heat olive oil in a large pan. Saute garlic for 1 minute until fragrant.",
       "Add crushed tomatoes, oregano, red pepper flakes, salt, and pepper. Simmer for 10 minutes.",
       "Stir in the cashew cream and nutritional yeast. Mix until smooth and creamy.",
       "Add the cooked pasta and toss well. Add pasta water as needed for desired consistency.",
@@ -303,14 +303,47 @@ const modalIngredients = document.getElementById("modalIngredients");
 const modalInstructions = document.getElementById("modalInstructions");
 const newsletterForm = document.getElementById("newsletterForm");
 const toast = document.getElementById("toast");
+const recipeSearch = document.getElementById("recipeSearch");
+const surpriseBtn = document.getElementById("surpriseBtn");
 
 // ===== Favorites State =====
 let favorites = JSON.parse(localStorage.getItem("veganBitesFavorites")) || [];
 
+// ===== Current search term =====
+let currentSearchTerm = "";
+
 // ===== Render Recipe Cards =====
-function renderRecipes(filter = "all") {
-  const filtered = filter === "all" ? recipes : recipes.filter(r => r.category === filter);
+function renderRecipes(filter = "all", searchTerm = "") {
+  let filtered = recipes;
+
+  // Apply category filter
+  if (filter === "favorites") {
+    filtered = recipes.filter(r => favorites.includes(r.id));
+  } else if (filter !== "all") {
+    filtered = recipes.filter(r => r.category === filter);
+  }
+
+  // Apply search filter
+  if (searchTerm) {
+    const term = searchTerm.toLowerCase();
+    filtered = filtered.filter(r =>
+      r.title.toLowerCase().includes(term) ||
+      r.category.toLowerCase().includes(term) ||
+      r.ingredients.some(i => i.toLowerCase().includes(term))
+    );
+  }
+
   recipeGrid.innerHTML = "";
+
+  if (filtered.length === 0) {
+    recipeGrid.innerHTML = `
+      <div class="no-results" style="grid-column: 1 / -1;">
+        <span class="no-results-emoji">🔍</span>
+        <p>${filter === "favorites" ? "No favorites yet — start exploring and tap the heart!" : "No recipes found. Try a different search term."}</p>
+      </div>
+    `;
+    return;
+  }
 
   filtered.forEach((recipe, index) => {
     const card = document.createElement("div");
@@ -367,7 +400,7 @@ filterButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     filterButtons.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-    renderRecipes(btn.dataset.filter);
+    renderRecipes(btn.dataset.filter, currentSearchTerm);
   });
 });
 
@@ -382,15 +415,32 @@ document.querySelectorAll(".category-card").forEach(card => {
       const matchingBtn = document.querySelector(`.filter-btn[data-filter="${category}"]`);
       if (matchingBtn) {
         matchingBtn.classList.add("active");
-        renderRecipes(category);
+        renderRecipes(category, currentSearchTerm);
       } else {
-        // If category doesn't have a filter button, show all
         document.querySelector('.filter-btn[data-filter="all"]').classList.add("active");
-        renderRecipes("all");
+        renderRecipes("all", currentSearchTerm);
       }
     }, 400);
   });
 });
+
+// ===== Search =====
+if (recipeSearch) {
+  recipeSearch.addEventListener("input", (e) => {
+    currentSearchTerm = e.target.value.trim();
+    const activeFilter = document.querySelector(".filter-btn.active").dataset.filter;
+    renderRecipes(activeFilter, currentSearchTerm);
+  });
+}
+
+// ===== Surprise Me =====
+if (surpriseBtn) {
+  surpriseBtn.addEventListener("click", () => {
+    const randomRecipe = recipes[Math.floor(Math.random() * recipes.length)];
+    openModal(randomRecipe.id);
+    showToast("🎲 Random pick: " + randomRecipe.title + "!");
+  });
+}
 
 // ===== Modal =====
 function openModal(id) {
@@ -439,7 +489,7 @@ function toggleFavorite(id) {
 
   // Re-render to update heart icons
   const activeFilter = document.querySelector(".filter-btn.active").dataset.filter;
-  renderRecipes(activeFilter);
+  renderRecipes(activeFilter, currentSearchTerm);
 }
 
 // ===== Toast Notification =====
@@ -462,6 +512,45 @@ document.querySelectorAll(".nav-link").forEach(link => {
     navLinks.classList.remove("active");
   });
 });
+
+// ===== Dropdown Menu (for mobile) =====
+document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+  const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        dropdown.classList.toggle('open');
+      }
+    });
+  }
+});
+
+// Close mobile menu when clicking dropdown links
+document.querySelectorAll('.nav-dropdown-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
+
+// ===== Dark Mode Toggle =====
+(function() {
+  const toggle = document.getElementById('darkModeToggle');
+  if (!toggle) return;
+
+  const savedTheme = localStorage.getItem('veganBitesTheme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  toggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+  toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('veganBitesTheme', next);
+    toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+})();
 
 // ===== Navbar Scroll Effect =====
 window.addEventListener("scroll", () => {

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources & Partners — Vegan Bites</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar page-nav" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">Vegan Bites</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle">Our Mission ▾</button>
+          <div class="nav-dropdown-menu">
+            <a href="animal-cruelty.html">Animal Cruelty Awareness</a>
+            <a href="how-we-support.html">How We Support</a>
+            <a href="take-action.html">Take Action</a>
+            <a href="animal-stories.html">Animal Stories</a>
+            <a href="facts-and-myths.html">Facts & Myths</a>
+            <a href="resources.html">Resources & Partners</a>
+          </div>
+        </li>
+        <li><a href="our-impact.html" class="nav-link">Our Impact</a></li>
+        <li><a href="index.html#recipes" class="nav-link">Recipes</a></li>
+      </ul>
+      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="page-hero hero-green">
+    <div class="hero-content">
+      <span class="hero-badge">Curated for You</span>
+      <h1 class="hero-title">Resources &<br><span class="highlight">Partners</span></h1>
+      <p class="hero-subtitle">A curated collection of documentaries, books, organizations, and sanctuaries to deepen your understanding and fuel your compassion.</p>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Explore</span>
+        <h2 class="section-title">Essential Resources</h2>
+        <p class="section-subtitle">Filter by category to find what inspires you</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="resource-filters">
+        <button class="resource-filter-btn active" data-filter="all">All</button>
+        <button class="resource-filter-btn" data-filter="documentaries">Documentaries</button>
+        <button class="resource-filter-btn" data-filter="books">Books</button>
+        <button class="resource-filter-btn" data-filter="organizations">Organizations</button>
+        <button class="resource-filter-btn" data-filter="sanctuaries">Sanctuaries</button>
+      </div>
+
+      <!-- Resource Cards -->
+      <div class="resource-grid">
+        <!-- Documentaries -->
+        <div class="resource-card" data-category="documentaries">
+          <span class="resource-emoji">🎬</span>
+          <div class="resource-info">
+            <h3>Dominion (2018)</h3>
+            <p>A groundbreaking documentary using drone and hidden camera footage to expose the dark side of modern animal agriculture across multiple industries.</p>
+            <span class="resource-link">Watch Free Online &rarr;</span>
+          </div>
+        </div>
+
+        <div class="resource-card" data-category="documentaries">
+          <span class="resource-emoji">🎬</span>
+          <div class="resource-info">
+            <h3>Earthlings (2005)</h3>
+            <p>Narrated by Joaquin Phoenix, this powerful documentary covers humanity's dependence on animals for food, clothing, entertainment, and scientific research.</p>
+            <span class="resource-link">Watch Free Online &rarr;</span>
+          </div>
+        </div>
+
+        <div class="resource-card" data-category="documentaries">
+          <span class="resource-emoji">🎬</span>
+          <div class="resource-info">
+            <h3>The Game Changers (2018)</h3>
+            <p>A riveting documentary following elite athletes, special ops soldiers, and scientists who show how plant-based eating fuels peak performance.</p>
+            <span class="resource-link">Stream on Netflix &rarr;</span>
+          </div>
+        </div>
+
+        <div class="resource-card" data-category="documentaries">
+          <span class="resource-emoji">🎬</span>
+          <div class="resource-info">
+            <h3>Cowspiracy (2014)</h3>
+            <p>Explores the devastating environmental impact of animal agriculture and why the world's leading environmental organizations are afraid to talk about it.</p>
+            <span class="resource-link">Stream on Netflix &rarr;</span>
+          </div>
+        </div>
+
+        <div class="resource-card" data-category="documentaries">
+          <span class="resource-emoji">🎬</span>
+          <div class="resource-info">
+            <h3>What the Health (2017)</h3>
+            <p>An investigative documentary that uncovers the collusion between the health industry, pharmaceutical companies, and the animal agriculture industry.</p>
+            <span class="resource-link">Stream on Netflix &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Books -->
+        <div class="resource-card" data-category="books">
+          <span class="resource-emoji">📚</span>
+          <div class="resource-info">
+            <h3>Animal Liberation by Peter Singer</h3>
+            <p>The foundational text of the modern animal rights movement. Singer's philosophical arguments against speciesism changed how millions think about animal ethics.</p>
+            <span class="resource-link">Find at Your Library &rarr;</span>
+          </div>
+        </div>
+
+        <div class="resource-card" data-category="books">
+          <span class="resource-emoji">📚</span>
+          <div class="resource-info">
+            <h3>Eating Animals by Jonathan Safran Foer</h3>
+            <p>A deeply personal and meticulously researched exploration of what it means to eat animals in an age of industrial farming. Equal parts memoir and investigation.</p>
+            <span class="resource-link">Find at Your Library &rarr;</span>
+          </div>
+        </div>
+
+        <div class="resource-card" data-category="books">
+          <span class="resource-emoji">📚</span>
+          <div class="resource-info">
+            <h3>How Not to Die by Dr. Michael Greger</h3>
+            <p>Evidence-based guide to the foods that can prevent and reverse the leading causes of death, backed by the latest peer-reviewed nutritional science.</p>
+            <span class="resource-link">Find at Your Library &rarr;</span>
+          </div>
+        </div>
+
+        <div class="resource-card" data-category="books">
+          <span class="resource-emoji">📚</span>
+          <div class="resource-info">
+            <h3>Why We Love Dogs, Eat Pigs, and Wear Cows by Melanie Joy</h3>
+            <p>Introduces the concept of "carnism" — the invisible belief system that conditions us to eat certain animals while loving others. A paradigm-shifting read.</p>
+            <span class="resource-link">Find at Your Library &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Organizations -->
+        <div class="resource-card" data-category="organizations">
+          <span class="resource-emoji">🏛️</span>
+          <div class="resource-info">
+            <h3>The Humane Society</h3>
+            <p>The nation's most effective animal protection organization, fighting for all animals through advocacy, education, and hands-on programs.</p>
+            <span class="resource-link">Visit Website &rarr;</span>
+          </div>
+        </div>
+
+        <div class="resource-card" data-category="organizations">
+          <span class="resource-emoji">🏛️</span>
+          <div class="resource-info">
+            <h3>Mercy For Animals</h3>
+            <p>Uses undercover investigations, corporate advocacy, and legal campaigns to end the worst forms of animal cruelty in the food industry.</p>
+            <span class="resource-link">Visit Website &rarr;</span>
+          </div>
+        </div>
+
+        <div class="resource-card" data-category="organizations">
+          <span class="resource-emoji">🏛️</span>
+          <div class="resource-info">
+            <h3>Animal Equality International</h3>
+            <p>An international organization working in 8 countries to protect farmed animals through investigations, education, and legislative reform.</p>
+            <span class="resource-link">Visit Website &rarr;</span>
+          </div>
+        </div>
+
+        <div class="resource-card" data-category="organizations">
+          <span class="resource-emoji">🏛️</span>
+          <div class="resource-info">
+            <h3>Veganuary</h3>
+            <p>A global campaign encouraging people to try vegan for January and beyond. Provides free meal plans, recipes, and support for transitioning.</p>
+            <span class="resource-link">Visit Website &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Sanctuaries -->
+        <div class="resource-card" data-category="sanctuaries">
+          <span class="resource-emoji">🐾</span>
+          <div class="resource-info">
+            <h3>Farm Sanctuary</h3>
+            <p>America's first farm animal sanctuary, founded in 1986. Rescues and provides lifelong care for farm animals while advocating for legal protections.</p>
+            <span class="resource-link">Plan a Visit &rarr;</span>
+          </div>
+        </div>
+
+        <div class="resource-card" data-category="sanctuaries">
+          <span class="resource-emoji">🐾</span>
+          <div class="resource-info">
+            <h3>Woodstock Farm Sanctuary</h3>
+            <p>A haven for rescued farm animals in New York's Hudson Valley. Offers tours, volunteer programs, and educational workshops year-round.</p>
+            <span class="resource-link">Plan a Visit &rarr;</span>
+          </div>
+        </div>
+
+        <div class="resource-card" data-category="sanctuaries">
+          <span class="resource-emoji">🐾</span>
+          <div class="resource-info">
+            <h3>The Gentle Barn</h3>
+            <p>Rescues and rehabilitates severely abused animals from factory farms and slaughterhouses. Also provides therapeutic programs for at-risk youth.</p>
+            <span class="resource-link">Plan a Visit &rarr;</span>
+          </div>
+        </div>
+
+        <div class="resource-card" data-category="sanctuaries">
+          <span class="resource-emoji">🐾</span>
+          <div class="resource-info">
+            <h3>Edgar's Mission</h3>
+            <p>An Australian farm animal sanctuary providing a safe haven for over 450 rescued animals while promoting a kinder world through education and advocacy.</p>
+            <span class="resource-link">Visit Website &rarr;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <h2>Knowledge Is Power</h2>
+    <p>The more you learn, the more you can share. Help spread awareness by sharing these resources with your friends and family.</p>
+    <a href="take-action.html" class="btn btn-primary">Take Action</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-icon">🌿</span>
+            <span class="logo-text">Vegan Bites</span>
+          </a>
+          <p>Delicious plant-based recipes for a healthier you and a happier planet.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+            <a href="#" class="social-link" aria-label="YouTube">🎥</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#recipes">Recipes</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="our-impact.html">Our Impact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Our Mission</h4>
+          <ul>
+            <li><a href="animal-cruelty.html">Animal Cruelty</a></li>
+            <li><a href="how-we-support.html">How We Support</a></li>
+            <li><a href="take-action.html">Take Action</a></li>
+            <li><a href="animal-stories.html">Animal Stories</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Learn More</h4>
+          <ul>
+            <li><a href="facts-and-myths.html">Facts & Myths</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Vegan Bites. All rights reserved. Made with 💚 for the planet.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <div class="toast" id="toast"></div>
+  <script src="js/pages.js"></script>
+</body>
+</html>
