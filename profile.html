@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - Vegora Bites</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/social.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">Vegora Bites</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="community.html" class="nav-link">Community</a></li>
+        <li><a href="index.html#recipes" class="nav-link">Recipes</a></li>
+      </ul>
+      <div class="nav-right" id="navRight"></div>
+      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="profile-page">
+    <div class="profile-container" id="profileContent">
+      <div class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Loading profile...</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast -->
+  <div class="social-toast" id="socialToast"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/profile.js"></script>
+  <script>document.body.classList.add('page-loaded');</script>
+</body>
+</html>
