@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Take action for animals - go plant-based, volunteer, advocate, and make a difference.">
+  <title>Take Action - Vegora Bites</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2d8a4e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+  <nav class="navbar" id="navbar" role="navigation"><div class="nav-container"><a href="index.html" class="nav-logo"><span class="logo-icon">🌿</span><span class="logo-text">Vegora Bites</span></a><ul class="nav-links" id="navLinks"><li><a href="index.html" class="nav-link">Home</a></li><li class="nav-dropdown"><button class="nav-dropdown-toggle" aria-expanded="false">Our Mission &#9662;</button><div class="nav-dropdown-menu" role="menu"><a href="animal-cruelty.html" role="menuitem">Animal Cruelty</a><a href="how-we-support.html" role="menuitem">How We Support</a><a href="take-action.html" role="menuitem">Take Action</a><a href="animal-stories.html" role="menuitem">Animal Stories</a><a href="facts-and-myths.html" role="menuitem">Facts &amp; Myths</a><a href="resources.html" role="menuitem">Resources</a></div></li><li class="nav-dropdown"><button class="nav-dropdown-toggle" aria-expanded="false">More &#9662;</button><div class="nav-dropdown-menu" role="menu"><a href="our-impact.html" role="menuitem">Our Impact</a><a href="meal-planner.html" role="menuitem">Meal Planner</a><a href="blog.html" role="menuitem">Blog</a><a href="challenges.html" role="menuitem">30-Day Challenge</a><a href="faq.html" role="menuitem">FAQ</a><a href="contact.html" role="menuitem">Contact Us</a></div></li></ul><button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">🌙</button><button class="hamburger" id="hamburger" aria-label="Toggle navigation menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button></div></nav>
+
+  <main id="main-content">
+    <section class="page-hero page-hero-teal">
+      <div class="container">
+        <span class="hero-badge">✊ Make a Difference</span>
+        <h1 class="page-hero-title">Take Action for Animals</h1>
+        <p class="page-hero-subtitle">Every choice matters. Here are powerful ways you can help end animal suffering.</p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-header"><span class="section-tag">Ways to Help</span><h2 class="section-title">Your Action Plan</h2></div>
+        <div class="action-grid">
+          <div class="action-card"><span class="action-number">01</span><span class="action-emoji">🌱</span><h3>Go Plant-Based</h3><p>Start with one meal a day, then one day a week. Every plant-based meal saves approximately 1 animal, 1,100 gallons of water, and 30 sq ft of forest.</p><a href="index.html#recipes" class="btn btn-primary">Try Our Recipes</a></div>
+          <div class="action-card"><span class="action-number">02</span><span class="action-emoji">🤝</span><h3>Volunteer</h3><p>Donate your time at local animal sanctuaries, rescue organizations, or food banks. Even a few hours a month makes a huge difference.</p><a href="resources.html" class="btn btn-outline">Find Organizations</a></div>
+          <div class="action-card"><span class="action-number">03</span><span class="action-emoji">📢</span><h3>Spread the Word</h3><p>Share what you've learned with friends and family. Host a vegan dinner party, share recipes on social media, or start conversations about animal welfare.</p><a href="facts-and-myths.html" class="btn btn-outline">Get the Facts</a></div>
+          <div class="action-card"><span class="action-number">04</span><span class="action-emoji">🏛️</span><h3>Support Legislation</h3><p>Contact your representatives and support bills that protect animals. Vote for candidates who prioritize animal welfare and environmental protection.</p><a href="resources.html" class="btn btn-outline">Learn More</a></div>
+          <div class="action-card"><span class="action-number">05</span><span class="action-emoji">💰</span><h3>Donate</h3><p>Support organizations fighting for animal rights. Even small donations add up to create meaningful change for millions of animals.</p><a href="how-we-support.html" class="btn btn-outline">See Our Partners</a></div>
+          <div class="action-card"><span class="action-number">06</span><span class="action-emoji">📚</span><h3>Educate Yourself</h3><p>Watch documentaries, read books, and follow animal welfare organizations. Knowledge is the first step toward meaningful change.</p><a href="resources.html" class="btn btn-outline">View Resources</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section page-section-alt">
+      <div class="container">
+        <div class="section-header"><span class="section-tag">Make a Pledge</span><h2 class="section-title">Take the Plant-Based Pledge</h2><p class="section-subtitle">Join thousands who have committed to making a difference</p></div>
+        <div class="pledge-section">
+          <div class="pledge-card">
+            <span class="pledge-emoji">🌿</span>
+            <h3>I pledge to try plant-based eating</h3>
+            <p>Choose your commitment level and join our community of change-makers.</p>
+            <form class="pledge-form" id="pledgeForm">
+              <select id="pledgeLevel" class="pledge-select" aria-label="Pledge level">
+                <option value="1meal">One plant-based meal a day</option>
+                <option value="1day">One fully plant-based day per week</option>
+                <option value="weekdays">Plant-based on weekdays</option>
+                <option value="full">Fully plant-based lifestyle</option>
+              </select>
+              <input type="text" placeholder="Your name (optional)" class="pledge-input" aria-label="Your name">
+              <button type="submit" class="btn btn-primary">Take the Pledge</button>
+            </form>
+            <div class="pledge-counter" id="pledgeCounter">
+              <span class="pledge-count" id="pledgeCount">1,247</span>
+              <span>people have pledged so far</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="nav-logo"><span class="logo-icon">🌿</span><span class="logo-text">Vegora Bites</span></a><p>Delicious plant-based recipes for a healthier you and a happier planet.</p></div>
+        <div class="footer-links"><h4>Our Mission</h4><ul><li><a href="animal-cruelty.html">Animal Cruelty</a></li><li><a href="how-we-support.html">How We Support</a></li><li><a href="take-action.html">Take Action</a></li><li><a href="animal-stories.html">Animal Stories</a></li></ul></div>
+        <div class="footer-links"><h4>Learn More</h4><ul><li><a href="facts-and-myths.html">Facts &amp; Myths</a></li><li><a href="resources.html">Resources</a></li><li><a href="challenges.html">30-Day Challenge</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Vegora Bites. All rights reserved. Made with 💚 for the planet.</p></div>
+    </div>
+  </footer>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+  <script src="js/pages.js"></script>
+</body>
+</html>
