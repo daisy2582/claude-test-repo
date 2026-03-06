@@ -1,4 +1,4 @@
-const CACHE_NAME = 'vegora-bites-v1';
+const CACHE_NAME = 'vegora-bites-v2';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -15,6 +15,10 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
+  // Only cache GET requests — skip API calls and non-GET methods (POST, PUT, DELETE)
+  if (event.request.method !== 'GET' || event.request.url.includes('/api/')) {
+    return;
+  }
   event.respondWith(
     caches.match(event.request).then(response => {
       return response || fetch(event.request);
