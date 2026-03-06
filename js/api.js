@@ -3,7 +3,7 @@
  * Handles all backend communication with JWT auth
  */
 const API = (() => {
-  const BASE_URL = 'http://localhost:8000';
+  const BASE_URL = 'http://localhost:9876';
   const TOKEN_KEY = 'vegora_token';
   const USER_KEY = 'vegora_user';
 
