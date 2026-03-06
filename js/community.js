@@ -1,5 +1,5 @@
 // ===== Configuration =====
-const API_BASE = 'http://localhost:9876/api';
+const API_BASE = '/api';
 
 // ===== State =====
 let currentUser = null;
@@ -418,7 +418,7 @@ function createPostCard(post) {
         </div>
         <h3 class="post-title">${escapeHtml(post.title)}</h3>
         <p class="post-preview">${escapeHtml(post.content)}</p>
-        ${post.image_url ? `<img src="http://localhost:9876${post.image_url}" class="post-image-thumb" alt="Post image" loading="lazy">` : ''}
+        ${post.image_url ? `<img src="${post.image_url}" class="post-image-thumb" alt="Post image" loading="lazy">` : ''}
         <div class="post-actions">
           <button class="post-action-btn" data-post-id="${post.id}">💬 ${post.comment_count} Comments</button>
           <button class="post-action-btn share-btn" data-title="${escapeHtml(post.title)}">📤 Share</button>
@@ -524,7 +524,7 @@ async function openPostDetail(postId) {
         <h2 class="detail-title">${escapeHtml(post.title)}</h2>
       </div>
       <div class="detail-content">${escapeHtml(post.content)}</div>
-      ${post.image_url ? `<img src="http://localhost:9876${post.image_url}" class="detail-image" alt="Post image">` : ''}
+      ${post.image_url ? `<img src="${post.image_url}" class="detail-image" alt="Post image">` : ''}
       <div class="detail-votes">
         <button class="vote-btn upvote ${post.user_vote === 1 ? 'upvoted' : ''}" id="detailUpvote">▲</button>
         <span class="vote-score" id="detailScore">${score}</span>
