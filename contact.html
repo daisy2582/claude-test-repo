@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with the Vegan Bites team - we'd love to hear from you!">
+  <title>Contact Us - Vegan Bites</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2d8a4e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation"><div class="nav-container"><a href="index.html" class="nav-logo"><span class="logo-icon">🌿</span><span class="logo-text">Vegan Bites</span></a><ul class="nav-links" id="navLinks"><li><a href="index.html" class="nav-link">Home</a></li><li class="nav-dropdown"><button class="nav-dropdown-toggle" aria-expanded="false">Our Mission &#9662;</button><div class="nav-dropdown-menu" role="menu"><a href="animal-cruelty.html" role="menuitem">Animal Cruelty</a><a href="how-we-support.html" role="menuitem">How We Support</a><a href="take-action.html" role="menuitem">Take Action</a><a href="animal-stories.html" role="menuitem">Animal Stories</a><a href="facts-and-myths.html" role="menuitem">Facts &amp; Myths</a><a href="resources.html" role="menuitem">Resources</a></div></li><li class="nav-dropdown"><button class="nav-dropdown-toggle" aria-expanded="false">More &#9662;</button><div class="nav-dropdown-menu" role="menu"><a href="our-impact.html" role="menuitem">Our Impact</a><a href="meal-planner.html" role="menuitem">Meal Planner</a><a href="blog.html" role="menuitem">Blog</a><a href="challenges.html" role="menuitem">30-Day Challenge</a><a href="faq.html" role="menuitem">FAQ</a><a href="contact.html" role="menuitem">Contact Us</a></div></li></ul><button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">🌙</button><button class="hamburger" id="hamburger" aria-label="Toggle navigation menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button></div></nav>
+
+  <main id="main-content">
+    <section class="page-hero hero-green" aria-label="Contact Us">
+      <div class="hero-content">
+        <span class="hero-badge">📬 Get In Touch</span>
+        <h1 class="hero-title">Contact <span class="highlight">Us</span></h1>
+        <p class="hero-subtitle">Have a question, suggestion, or just want to say hello? We'd love to hear from you.</p>
+      </div>
+    </section>
+
+    <section class="page-section" aria-label="Contact Form">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Reach Out</span>
+          <h2 class="section-title">Send Us a Message</h2>
+          <p class="section-subtitle">Fill out the form below and we'll get back to you within 48 hours</p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="contactName">Your Name *</label>
+            <input type="text" id="contactName" name="name" required placeholder="Enter your full name" aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email Address *</label>
+            <input type="email" id="contactEmail" name="email" required placeholder="your@email.com" aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="contactSubject">Subject</label>
+            <select id="contactSubject" name="subject">
+              <option value="general">General Inquiry</option>
+              <option value="recipe">Recipe Suggestion</option>
+              <option value="partnership">Partnership Opportunity</option>
+              <option value="bug">Report a Bug</option>
+              <option value="feedback">Feedback</option>
+              <option value="press">Press / Media</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message *</label>
+            <textarea id="contactMessage" name="message" required placeholder="Tell us what's on your mind..." aria-required="true"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="page-section" aria-label="Contact Information">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Other Ways</span>
+          <h2 class="section-title">Find Us Here</h2>
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <span class="info-emoji">📧</span>
+            <h3>Email Us</h3>
+            <p>For general inquiries, send an email to <strong>hello@veganbites.com</strong>. For partnerships, use <strong>partners@veganbites.com</strong>.</p>
+          </div>
+          <div class="info-card">
+            <span class="info-emoji">📱</span>
+            <h3>Social Media</h3>
+            <p>Follow us on Instagram, Twitter, Facebook, and YouTube for daily recipes, tips, and behind-the-scenes content. DMs are always open!</p>
+          </div>
+          <div class="info-card">
+            <span class="info-emoji">📍</span>
+            <h3>Our Location</h3>
+            <p>Vegan Bites HQ is based in Portland, Oregon, USA. We operate globally with team members across 5 countries.</p>
+          </div>
+        </div>
+
+        <!-- Decorative Map -->
+        <div style="margin-top: 40px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: linear-gradient(135deg, var(--primary-light), var(--bg-section)); padding: 60px; text-align: center;">
+          <span style="font-size: 4rem; display: block; margin-bottom: 16px;">🗺️</span>
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 8px;">Portland, Oregon</h3>
+          <p style="color: var(--text-light); font-size: 0.95rem;">The vegan capital of the world -- and our proud home base.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before You Contact Us -->
+    <section class="page-section" aria-label="Common Questions">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Quick Answers</span>
+          <h2 class="section-title">Before You Contact Us</h2>
+          <p class="section-subtitle">These might answer your question right away</p>
+        </div>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <h3>How do I submit a recipe?</h3>
+              <span class="accordion-arrow">&#9660;</span>
+            </button>
+            <div class="accordion-body"><div class="accordion-body-inner"><p>We love community recipes! Use the contact form above with the "Recipe Suggestion" subject. Include the recipe name, ingredients, instructions, and a brief description. If we feature your recipe, we'll credit you on the site.</p></div></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <h3>Can I partner with Vegan Bites?</h3>
+              <span class="accordion-arrow">&#9660;</span>
+            </button>
+            <div class="accordion-body"><div class="accordion-body-inner"><p>We're always looking for partnerships with cruelty-free brands, animal sanctuaries, and plant-based businesses. Select "Partnership Opportunity" in the form above or email partners@veganbites.com with details about your organization and how you'd like to collaborate.</p></div></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <h3>I found a bug on the site. How do I report it?</h3>
+              <span class="accordion-arrow">&#9660;</span>
+            </button>
+            <div class="accordion-body"><div class="accordion-body-inner"><p>Thank you for helping us improve! Use the form above with the "Report a Bug" subject. Please include which page the bug occurred on, what browser you're using, and a description of what happened vs. what you expected. Screenshots are always helpful.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo"><span class="logo-icon">🌿</span><span class="logo-text">Vegan Bites</span></a><p>Delicious plant-based recipes for a healthier you and a happier planet.</p></div><div class="footer-links"><h4>Our Mission</h4><ul><li><a href="animal-cruelty.html">Animal Cruelty</a></li><li><a href="how-we-support.html">How We Support</a></li><li><a href="take-action.html">Take Action</a></li><li><a href="animal-stories.html">Animal Stories</a></li></ul></div><div class="footer-links"><h4>Learn More</h4><ul><li><a href="facts-and-myths.html">Facts &amp; Myths</a></li><li><a href="resources.html">Resources</a></li><li><a href="challenges.html">30-Day Challenge</a></li><li><a href="contact.html">Contact Us</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Vegan Bites. All rights reserved. Made with 💚 for the planet.</p></div></div></footer>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+  <div class="cookie-consent" id="cookieConsent" style="display:none;"><span>🍪 We use cookies to enhance your experience.</span><div class="cookie-actions"><button class="btn btn-primary cookie-btn" id="cookieAccept">Accept</button><button class="btn btn-outline cookie-btn" id="cookieDecline">Decline</button></div></div>
+  <script src="js/pages.js"></script>
+</body>
+</html>

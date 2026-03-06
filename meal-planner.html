@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plan your weekly vegan meals with our interactive meal planner and generate shopping lists.">
+  <title>Meal Planner - Vegan Bites</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2d8a4e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation"><div class="nav-container"><a href="index.html" class="nav-logo"><span class="logo-icon">🌿</span><span class="logo-text">Vegan Bites</span></a><ul class="nav-links" id="navLinks"><li><a href="index.html" class="nav-link">Home</a></li><li class="nav-dropdown"><button class="nav-dropdown-toggle" aria-expanded="false">Our Mission &#9662;</button><div class="nav-dropdown-menu" role="menu"><a href="animal-cruelty.html" role="menuitem">Animal Cruelty</a><a href="how-we-support.html" role="menuitem">How We Support</a><a href="take-action.html" role="menuitem">Take Action</a><a href="animal-stories.html" role="menuitem">Animal Stories</a><a href="facts-and-myths.html" role="menuitem">Facts &amp; Myths</a><a href="resources.html" role="menuitem">Resources</a></div></li><li class="nav-dropdown"><button class="nav-dropdown-toggle" aria-expanded="false">More &#9662;</button><div class="nav-dropdown-menu" role="menu"><a href="our-impact.html" role="menuitem">Our Impact</a><a href="meal-planner.html" role="menuitem">Meal Planner</a><a href="blog.html" role="menuitem">Blog</a><a href="challenges.html" role="menuitem">30-Day Challenge</a><a href="faq.html" role="menuitem">FAQ</a><a href="contact.html" role="menuitem">Contact Us</a></div></li></ul><button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">🌙</button><button class="hamburger" id="hamburger" aria-label="Toggle navigation menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button></div></nav>
+
+  <main id="main-content">
+    <section class="page-hero hero-green" aria-label="Meal Planner">
+      <div class="hero-content">
+        <span class="hero-badge">🗓️ Plan Your Week</span>
+        <h1 class="hero-title">Meal <span class="highlight">Planner</span></h1>
+        <p class="hero-subtitle">Plan your plant-based meals for the week and generate a shopping list. Your selections are saved automatically.</p>
+      </div>
+    </section>
+
+    <section class="page-section" aria-label="Weekly Planner">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">This Week</span>
+          <h2 class="section-title">Your Weekly Meal Plan</h2>
+          <p class="section-subtitle">Select recipes for each meal -- your plan saves automatically</p>
+        </div>
+
+        <div class="planner-grid" id="mealPlannerGrid">
+          <div class="planner-day">
+            <h3>Monday</h3>
+            <div class="planner-meal"><div class="planner-meal-label">Breakfast</div><select data-day="mon" data-meal="breakfast" aria-label="Monday breakfast"><option value="">-- Select --</option><option value="Avocado Toast with Chickpea Scramble">Avocado Toast</option><option value="Berry Bliss Smoothie Bowl">Berry Smoothie Bowl</option><option value="Banana Oat Pancakes">Banana Oat Pancakes</option><option value="Tropical Mango Smoothie">Tropical Mango Smoothie</option><option value="Green Power Smoothie">Green Power Smoothie</option></select></div>
+            <div class="planner-meal"><div class="planner-meal-label">Lunch</div><select data-day="mon" data-meal="lunch" aria-label="Monday lunch"><option value="">-- Select --</option><option value="Rainbow Buddha Bowl">Rainbow Buddha Bowl</option><option value="Mediterranean Quinoa Salad">Mediterranean Quinoa Salad</option><option value="Crispy Cauliflower Tacos">Cauliflower Tacos</option><option value="Asian Noodle Bowl">Asian Noodle Bowl</option></select></div>
+            <div class="planner-meal"><div class="planner-meal-label">Dinner</div><select data-day="mon" data-meal="dinner" aria-label="Monday dinner"><option value="">-- Select --</option><option value="Thai Coconut Curry">Thai Coconut Curry</option><option value="Mushroom Risotto">Mushroom Risotto</option><option value="Stuffed Bell Peppers">Stuffed Bell Peppers</option><option value="Lentil Bolognese">Lentil Bolognese</option></select></div>
+          </div>
+
+          <div class="planner-day">
+            <h3>Tuesday</h3>
+            <div class="planner-meal"><div class="planner-meal-label">Breakfast</div><select data-day="tue" data-meal="breakfast" aria-label="Tuesday breakfast"><option value="">-- Select --</option><option value="Avocado Toast with Chickpea Scramble">Avocado Toast</option><option value="Berry Bliss Smoothie Bowl">Berry Smoothie Bowl</option><option value="Banana Oat Pancakes">Banana Oat Pancakes</option><option value="Tropical Mango Smoothie">Tropical Mango Smoothie</option><option value="Green Power Smoothie">Green Power Smoothie</option></select></div>
+            <div class="planner-meal"><div class="planner-meal-label">Lunch</div><select data-day="tue" data-meal="lunch" aria-label="Tuesday lunch"><option value="">-- Select --</option><option value="Rainbow Buddha Bowl">Rainbow Buddha Bowl</option><option value="Mediterranean Quinoa Salad">Mediterranean Quinoa Salad</option><option value="Crispy Cauliflower Tacos">Cauliflower Tacos</option><option value="Asian Noodle Bowl">Asian Noodle Bowl</option></select></div>
+            <div class="planner-meal"><div class="planner-meal-label">Dinner</div><select data-day="tue" data-meal="dinner" aria-label="Tuesday dinner"><option value="">-- Select --</option><option value="Thai Coconut Curry">Thai Coconut Curry</option><option value="Mushroom Risotto">Mushroom Risotto</option><option value="Stuffed Bell Peppers">Stuffed Bell Peppers</option><option value="Lentil Bolognese">Lentil Bolognese</option></select></div>
+          </div>
+
+          <div class="planner-day">
+            <h3>Wednesday</h3>
+            <div class="planner-meal"><div class="planner-meal-label">Breakfast</div><select data-day="wed" data-meal="breakfast" aria-label="Wednesday breakfast"><option value="">-- Select --</option><option value="Avocado Toast with Chickpea Scramble">Avocado Toast</option><option value="Berry Bliss Smoothie Bowl">Berry Smoothie Bowl</option><option value="Banana Oat Pancakes">Banana Oat Pancakes</option><option value="Tropical Mango Smoothie">Tropical Mango Smoothie</option><option value="Green Power Smoothie">Green Power Smoothie</option></select></div>
+            <div class="planner-meal"><div class="planner-meal-label">Lunch</div><select data-day="wed" data-meal="lunch" aria-label="Wednesday lunch"><option value="">-- Select --</option><option value="Rainbow Buddha Bowl">Rainbow Buddha Bowl</option><option value="Mediterranean Quinoa Salad">Mediterranean Quinoa Salad</option><option value="Crispy Cauliflower Tacos">Cauliflower Tacos</option><option value="Asian Noodle Bowl">Asian Noodle Bowl</option></select></div>
+            <div class="planner-meal"><div class="planner-meal-label">Dinner</div><select data-day="wed" data-meal="dinner" aria-label="Wednesday dinner"><option value="">-- Select --</option><option value="Thai Coconut Curry">Thai Coconut Curry</option><option value="Mushroom Risotto">Mushroom Risotto</option><option value="Stuffed Bell Peppers">Stuffed Bell Peppers</option><option value="Lentil Bolognese">Lentil Bolognese</option></select></div>
+          </div>
+
+          <div class="planner-day">
+            <h3>Thursday</h3>
+            <div class="planner-meal"><div class="planner-meal-label">Breakfast</div><select data-day="thu" data-meal="breakfast" aria-label="Thursday breakfast"><option value="">-- Select --</option><option value="Avocado Toast with Chickpea Scramble">Avocado Toast</option><option value="Berry Bliss Smoothie Bowl">Berry Smoothie Bowl</option><option value="Banana Oat Pancakes">Banana Oat Pancakes</option><option value="Tropical Mango Smoothie">Tropical Mango Smoothie</option><option value="Green Power Smoothie">Green Power Smoothie</option></select></div>
+            <div class="planner-meal"><div class="planner-meal-label">Lunch</div><select data-day="thu" data-meal="lunch" aria-label="Thursday lunch"><option value="">-- Select --</option><option value="Rainbow Buddha Bowl">Rainbow Buddha Bowl</option><option value="Mediterranean Quinoa Salad">Mediterranean Quinoa Salad</option><option value="Crispy Cauliflower Tacos">Cauliflower Tacos</option><option value="Asian Noodle Bowl">Asian Noodle Bowl</option></select></div>
+            <div class="planner-meal"><div class="planner-meal-label">Dinner</div><select data-day="thu" data-meal="dinner" aria-label="Thursday dinner"><option value="">-- Select --</option><option value="Thai Coconut Curry">Thai Coconut Curry</option><option value="Mushroom Risotto">Mushroom Risotto</option><option value="Stuffed Bell Peppers">Stuffed Bell Peppers</option><option value="Lentil Bolognese">Lentil Bolognese</option></select></div>
+          </div>
+
+          <div class="planner-day">
+            <h3>Friday</h3>
+            <div class="planner-meal"><div class="planner-meal-label">Breakfast</div><select data-day="fri" data-meal="breakfast" aria-label="Friday breakfast"><option value="">-- Select --</option><option value="Avocado Toast with Chickpea Scramble">Avocado Toast</option><option value="Berry Bliss Smoothie Bowl">Berry Smoothie Bowl</option><option value="Banana Oat Pancakes">Banana Oat Pancakes</option><option value="Tropical Mango Smoothie">Tropical Mango Smoothie</option><option value="Green Power Smoothie">Green Power Smoothie</option></select></div>
+            <div class="planner-meal"><div class="planner-meal-label">Lunch</div><select data-day="fri" data-meal="lunch" aria-label="Friday lunch"><option value="">-- Select --</option><option value="Rainbow Buddha Bowl">Rainbow Buddha Bowl</option><option value="Mediterranean Quinoa Salad">Mediterranean Quinoa Salad</option><option value="Crispy Cauliflower Tacos">Cauliflower Tacos</option><option value="Asian Noodle Bowl">Asian Noodle Bowl</option></select></div>
+            <div class="planner-meal"><div class="planner-meal-label">Dinner</div><select data-day="fri" data-meal="dinner" aria-label="Friday dinner"><option value="">-- Select --</option><option value="Thai Coconut Curry">Thai Coconut Curry</option><option value="Mushroom Risotto">Mushroom Risotto</option><option value="Stuffed Bell Peppers">Stuffed Bell Peppers</option><option value="Lentil Bolognese">Lentil Bolognese</option></select></div>
+          </div>
+
+          <div class="planner-day">
+            <h3>Saturday</h3>
+            <div class="planner-meal"><div class="planner-meal-label">Breakfast</div><select data-day="sat" data-meal="breakfast" aria-label="Saturday breakfast"><option value="">-- Select --</option><option value="Avocado Toast with Chickpea Scramble">Avocado Toast</option><option value="Berry Bliss Smoothie Bowl">Berry Smoothie Bowl</option><option value="Banana Oat Pancakes">Banana Oat Pancakes</option><option value="Tropical Mango Smoothie">Tropical Mango Smoothie</option><option value="Green Power Smoothie">Green Power Smoothie</option></select></div>
+            <div class="planner-meal"><div class="planner-meal-label">Lunch</div><select data-day="sat" data-meal="lunch" aria-label="Saturday lunch"><option value="">-- Select --</option><option value="Rainbow Buddha Bowl">Rainbow Buddha Bowl</option><option value="Mediterranean Quinoa Salad">Mediterranean Quinoa Salad</option><option value="Crispy Cauliflower Tacos">Cauliflower Tacos</option><option value="Asian Noodle Bowl">Asian Noodle Bowl</option></select></div>
+            <div class="planner-meal"><div class="planner-meal-label">Dinner</div><select data-day="sat" data-meal="dinner" aria-label="Saturday dinner"><option value="">-- Select --</option><option value="Thai Coconut Curry">Thai Coconut Curry</option><option value="Mushroom Risotto">Mushroom Risotto</option><option value="Stuffed Bell Peppers">Stuffed Bell Peppers</option><option value="Lentil Bolognese">Lentil Bolognese</option></select></div>
+          </div>
+
+          <div class="planner-day">
+            <h3>Sunday</h3>
+            <div class="planner-meal"><div class="planner-meal-label">Breakfast</div><select data-day="sun" data-meal="breakfast" aria-label="Sunday breakfast"><option value="">-- Select --</option><option value="Avocado Toast with Chickpea Scramble">Avocado Toast</option><option value="Berry Bliss Smoothie Bowl">Berry Smoothie Bowl</option><option value="Banana Oat Pancakes">Banana Oat Pancakes</option><option value="Tropical Mango Smoothie">Tropical Mango Smoothie</option><option value="Green Power Smoothie">Green Power Smoothie</option></select></div>
+            <div class="planner-meal"><div class="planner-meal-label">Lunch</div><select data-day="sun" data-meal="lunch" aria-label="Sunday lunch"><option value="">-- Select --</option><option value="Rainbow Buddha Bowl">Rainbow Buddha Bowl</option><option value="Mediterranean Quinoa Salad">Mediterranean Quinoa Salad</option><option value="Crispy Cauliflower Tacos">Cauliflower Tacos</option><option value="Asian Noodle Bowl">Asian Noodle Bowl</option></select></div>
+            <div class="planner-meal"><div class="planner-meal-label">Dinner</div><select data-day="sun" data-meal="dinner" aria-label="Sunday dinner"><option value="">-- Select --</option><option value="Thai Coconut Curry">Thai Coconut Curry</option><option value="Mushroom Risotto">Mushroom Risotto</option><option value="Stuffed Bell Peppers">Stuffed Bell Peppers</option><option value="Lentil Bolognese">Lentil Bolognese</option></select></div>
+          </div>
+        </div>
+
+        <div class="planner-actions">
+          <button class="btn btn-primary" id="generateShoppingList">🛒 Generate Shopping List</button>
+          <button class="btn btn-outline" id="clearMealPlan">🗑️ Clear All</button>
+        </div>
+
+        <div class="shopping-list" id="shoppingList">
+          <h3>🛒 Your Shopping List</h3>
+          <ul></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo"><span class="logo-icon">🌿</span><span class="logo-text">Vegan Bites</span></a><p>Delicious plant-based recipes for a healthier you and a happier planet.</p></div><div class="footer-links"><h4>Our Mission</h4><ul><li><a href="animal-cruelty.html">Animal Cruelty</a></li><li><a href="how-we-support.html">How We Support</a></li><li><a href="take-action.html">Take Action</a></li><li><a href="animal-stories.html">Animal Stories</a></li></ul></div><div class="footer-links"><h4>Learn More</h4><ul><li><a href="facts-and-myths.html">Facts &amp; Myths</a></li><li><a href="resources.html">Resources</a></li><li><a href="challenges.html">30-Day Challenge</a></li><li><a href="contact.html">Contact Us</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Vegan Bites. All rights reserved. Made with 💚 for the planet.</p></div></div></footer>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+  <div class="cookie-consent" id="cookieConsent" style="display:none;"><span>🍪 We use cookies to enhance your experience.</span><div class="cookie-actions"><button class="btn btn-primary cookie-btn" id="cookieAccept">Accept</button><button class="btn btn-outline cookie-btn" id="cookieDecline">Decline</button></div></div>
+  <script src="js/pages.js"></script>
+</body>
+</html>
