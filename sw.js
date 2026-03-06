@@ -1,4 +1,4 @@
-const CACHE_NAME = 'vegan-bites-v1';
+const CACHE_NAME = 'vegora-bites-v1';
 const urlsToCache = [
   '/',
   '/index.html',

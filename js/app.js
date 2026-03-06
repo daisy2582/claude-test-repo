@@ -798,8 +798,8 @@ const recipeSearch = document.getElementById("recipeSearch");
 const surpriseBtn = document.getElementById("surpriseBtn");
 
 // ===== State =====
-let favorites = JSON.parse(localStorage.getItem("veganBitesFavorites")) || [];
-let ratings = JSON.parse(localStorage.getItem("veganBitesRatings")) || {};
+let favorites = JSON.parse(localStorage.getItem("vegoraBitesFavorites")) || [];
+let ratings = JSON.parse(localStorage.getItem("vegoraBitesRatings")) || {};
 let currentSearchTerm = "";
 let activeTagFilter = "";
 
@@ -1011,7 +1011,7 @@ function openModal(id) {
         const val = Number(star.dataset.value);
         const rid = Number(star.parentElement.dataset.recipeId);
         ratings[rid] = val;
-        localStorage.setItem("veganBitesRatings", JSON.stringify(ratings));
+        localStorage.setItem("vegoraBitesRatings", JSON.stringify(ratings));
         openModal(rid);
         showToast("⭐ Rated " + val + "/5!");
         const activeFilter = document.querySelector(".filter-btn.active").dataset.filter;
@@ -1176,7 +1176,7 @@ function printRecipe() {
   const printWin = window.open("", "_blank");
   printWin.document.write(`
     <!DOCTYPE html>
-    <html><head><title>${recipe.title} - Vegan Bites</title>
+    <html><head><title>${recipe.title} - Vegora Bites</title>
     <style>
       body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #333; }
       h1 { font-size: 1.8rem; margin-bottom: 8px; }
@@ -1200,7 +1200,7 @@ function printRecipe() {
     <ul>${recipe.ingredients.map(i => `<li>${i}</li>`).join("")}</ul>
     <h2>Instructions</h2>
     <ol>${recipe.instructions.map(s => `<li>${s}</li>`).join("")}</ol>
-    <div class="footer">Printed from Vegan Bites | veganbites.com</div>
+    <div class="footer">Printed from Vegora Bites | veganbites.com</div>
     </body></html>
   `);
   printWin.document.close();
@@ -1211,7 +1211,7 @@ function printRecipe() {
 function shareRecipe() {
   const recipe = recipes.find(r => r.title === modalTitle.textContent);
   if (!recipe) return;
-  const text = `Check out this vegan recipe: ${recipe.title} ${recipe.emoji} - from Vegan Bites!`;
+  const text = `Check out this vegan recipe: ${recipe.title} ${recipe.emoji} - from Vegora Bites!`;
   const url = window.location.href;
 
   if (navigator.share) {
@@ -1236,7 +1236,7 @@ function toggleFavorite(id) {
     favorites.splice(index, 1);
     showToast("💔 Removed from favorites");
   }
-  localStorage.setItem("veganBitesFavorites", JSON.stringify(favorites));
+  localStorage.setItem("vegoraBitesFavorites", JSON.stringify(favorites));
   const activeFilter = document.querySelector(".filter-btn.active").dataset.filter;
   renderRecipes(activeFilter, currentSearchTerm);
 }
@@ -1286,7 +1286,7 @@ document.querySelectorAll('.nav-dropdown-menu a').forEach(link => {
   const toggle = document.getElementById('darkModeToggle');
   if (!toggle) return;
 
-  const savedTheme = localStorage.getItem('veganBitesTheme') || 'light';
+  const savedTheme = localStorage.getItem('vegoraBitesTheme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
   toggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
 
@@ -1294,7 +1294,7 @@ document.querySelectorAll('.nav-dropdown-menu a').forEach(link => {
     const current = document.documentElement.getAttribute('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('veganBitesTheme', next);
+    localStorage.setItem('vegoraBitesTheme', next);
     toggle.textContent = next === 'dark' ? '☀️' : '🌙';
   });
 })();
@@ -1304,14 +1304,14 @@ document.querySelectorAll('.nav-dropdown-menu a').forEach(link => {
   const picker = document.getElementById('themePicker');
   if (!picker) return;
 
-  const saved = localStorage.getItem('veganBitesAccent') || 'green';
+  const saved = localStorage.getItem('vegoraBitesAccent') || 'green';
   applyAccentTheme(saved);
 
   picker.querySelectorAll('.theme-color-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const theme = btn.dataset.accent;
       applyAccentTheme(theme);
-      localStorage.setItem('veganBitesAccent', theme);
+      localStorage.setItem('vegoraBitesAccent', theme);
       showToast("🎨 Theme changed!");
     });
   });
@@ -1483,7 +1483,7 @@ function initScrollAnimations() {
 
 // ===== Cookie Consent =====
 (function() {
-  if (localStorage.getItem("veganBitesCookieConsent")) return;
+  if (localStorage.getItem("vegoraBitesCookieConsent")) return;
   const banner = document.getElementById("cookieConsent");
   if (!banner) return;
   banner.style.display = "flex";
@@ -1492,11 +1492,11 @@ function initScrollAnimations() {
   const declineBtn = document.getElementById("cookieDecline");
 
   if (acceptBtn) acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("veganBitesCookieConsent", "accepted");
+    localStorage.setItem("vegoraBitesCookieConsent", "accepted");
     banner.style.display = "none";
   });
   if (declineBtn) declineBtn.addEventListener("click", () => {
-    localStorage.setItem("veganBitesCookieConsent", "declined");
+    localStorage.setItem("vegoraBitesCookieConsent", "declined");
     banner.style.display = "none";
   });
 })();
@@ -1520,6 +1520,6 @@ document.addEventListener("DOMContentLoaded", () => {
   updateScrollProgress();
 
   // Apply saved accent
-  const savedAccent = localStorage.getItem('veganBitesAccent') || 'green';
+  const savedAccent = localStorage.getItem('vegoraBitesAccent') || 'green';
   applyAccentTheme(savedAccent);
 });

@@ -50,7 +50,7 @@ function updateScrollProgress() {
   const toggle = document.getElementById('darkModeToggle');
   if (!toggle) return;
 
-  const savedTheme = localStorage.getItem('veganBitesTheme') || 'light';
+  const savedTheme = localStorage.getItem('vegoraBitesTheme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
   toggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
 
@@ -58,7 +58,7 @@ function updateScrollProgress() {
     const current = document.documentElement.getAttribute('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('veganBitesTheme', next);
+    localStorage.setItem('vegoraBitesTheme', next);
     toggle.textContent = next === 'dark' ? '☀️' : '🌙';
   });
 })();
@@ -121,7 +121,7 @@ function updateScrollProgress() {
   const counter = document.getElementById('pledgeCount');
   if (!form) return;
 
-  let pledgeCount = parseInt(localStorage.getItem('veganBitesPledgeCount')) || 1247;
+  let pledgeCount = parseInt(localStorage.getItem('vegoraBitesPledgeCount')) || 1247;
   if (counter) counter.textContent = pledgeCount.toLocaleString();
 
   form.addEventListener('submit', (e) => {
@@ -129,7 +129,7 @@ function updateScrollProgress() {
     const nameInput = form.querySelector('input');
     if (nameInput && nameInput.value.trim()) {
       pledgeCount++;
-      localStorage.setItem('veganBitesPledgeCount', pledgeCount);
+      localStorage.setItem('vegoraBitesPledgeCount', pledgeCount);
       if (counter) counter.textContent = pledgeCount.toLocaleString();
       showPageToast('Thank you for pledging! Together we make a difference.');
       form.reset();
@@ -245,7 +245,7 @@ function showPageToast(message) {
   const days = document.querySelectorAll('.challenge-day');
   if (days.length === 0) return;
 
-  let completed = JSON.parse(localStorage.getItem('veganBitesChallenge')) || [];
+  let completed = JSON.parse(localStorage.getItem('vegoraBitesChallenge')) || [];
 
   function updateProgress() {
     const fill = document.querySelector('.challenge-progress-fill');
@@ -274,7 +274,7 @@ function showPageToast(message) {
         completed.push(dayNum);
         day.classList.add('completed');
       }
-      localStorage.setItem('veganBitesChallenge', JSON.stringify(completed));
+      localStorage.setItem('vegoraBitesChallenge', JSON.stringify(completed));
       updateProgress();
     });
   });
@@ -287,7 +287,7 @@ function showPageToast(message) {
   const planner = document.getElementById('mealPlannerGrid');
   if (!planner) return;
 
-  let plannerData = JSON.parse(localStorage.getItem('veganBitesMealPlan')) || {};
+  let plannerData = JSON.parse(localStorage.getItem('vegoraBitesMealPlan')) || {};
 
   // Restore saved values
   planner.querySelectorAll('select').forEach(sel => {
@@ -296,7 +296,7 @@ function showPageToast(message) {
 
     sel.addEventListener('change', () => {
       plannerData[key] = sel.value;
-      localStorage.setItem('veganBitesMealPlan', JSON.stringify(plannerData));
+      localStorage.setItem('vegoraBitesMealPlan', JSON.stringify(plannerData));
     });
   });
 
@@ -333,7 +333,7 @@ function showPageToast(message) {
   if (clearBtn) {
     clearBtn.addEventListener('click', () => {
       plannerData = {};
-      localStorage.removeItem('veganBitesMealPlan');
+      localStorage.removeItem('vegoraBitesMealPlan');
       planner.querySelectorAll('select').forEach(sel => sel.value = '');
       if (listDiv) listDiv.style.display = 'none';
       showPageToast('Meal plan cleared!');
@@ -343,7 +343,7 @@ function showPageToast(message) {
 
 // ===== Cookie Consent =====
 (function() {
-  if (localStorage.getItem('veganBitesCookieConsent')) return;
+  if (localStorage.getItem('vegoraBitesCookieConsent')) return;
   const banner = document.getElementById('cookieConsent');
   if (!banner) return;
   banner.style.display = 'flex';
@@ -352,11 +352,11 @@ function showPageToast(message) {
   const declineBtn = document.getElementById('cookieDecline');
 
   if (acceptBtn) acceptBtn.addEventListener('click', () => {
-    localStorage.setItem('veganBitesCookieConsent', 'accepted');
+    localStorage.setItem('vegoraBitesCookieConsent', 'accepted');
     banner.style.display = 'none';
   });
   if (declineBtn) declineBtn.addEventListener('click', () => {
-    localStorage.setItem('veganBitesCookieConsent', 'declined');
+    localStorage.setItem('vegoraBitesCookieConsent', 'declined');
     banner.style.display = 'none';
   });
 })();
