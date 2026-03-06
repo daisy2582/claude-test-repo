@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vegora Bites Community - Share recipes, tips, and your vegan journey">
+  <title>Community - Vegora Bites</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/social.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">Vegora Bites</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="community.html" class="nav-link active">Community</a></li>
+        <li><a href="index.html#recipes" class="nav-link">Recipes</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+      </ul>
+      <div class="nav-right" id="navRight">
+        <!-- Populated by JS based on auth state -->
+      </div>
+      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Community Hero -->
+  <div class="community-hero">
+    <h1>Vegora Community</h1>
+    <p>Share your vegan recipes, tips, journeys, and connect with fellow plant-based enthusiasts</p>
+  </div>
+
+  <main class="community-page">
+    <div class="community-layout">
+      <!-- Feed Area -->
+      <div class="feed-area">
+        <!-- Search -->
+        <div class="feed-search">
+          <input type="text" id="searchInput" placeholder="Search posts..." aria-label="Search posts">
+          <button id="searchBtn">Search</button>
+        </div>
+
+        <!-- Feed Controls -->
+        <div class="feed-controls">
+          <div class="feed-sort-tabs">
+            <button class="sort-tab active" data-sort="new">New</button>
+            <button class="sort-tab" data-sort="top">Top</button>
+            <button class="sort-tab" data-sort="hot">Hot</button>
+          </div>
+          <div class="feed-category-tabs">
+            <button class="category-tab active" data-category="">All</button>
+            <button class="category-tab" data-category="recipe">Recipe</button>
+            <button class="category-tab" data-category="tip">Tip</button>
+            <button class="category-tab" data-category="journey">Journey</button>
+            <button class="category-tab" data-category="progress">Progress</button>
+            <button class="category-tab" data-category="discussion">Discussion</button>
+            <button class="category-tab" data-category="news">News</button>
+          </div>
+        </div>
+
+        <!-- Create Post Bar (shown when logged in) -->
+        <div class="create-post-bar" id="createPostBar" style="display:none;" onclick="openCreatePostModal()">
+          <div class="create-post-avatar" id="createPostAvatar">🌱</div>
+          <div class="create-post-input">Share something with the community...</div>
+        </div>
+
+        <!-- Feed -->
+        <div id="feedContainer">
+          <div class="loading-spinner" id="feedLoading">
+            <div class="spinner"></div>
+            <p>Loading posts...</p>
+          </div>
+        </div>
+
+        <!-- Load More -->
+        <div class="load-more-container" id="loadMoreContainer" style="display:none;">
+          <button class="load-more-btn" id="loadMoreBtn">Load More Posts</button>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <h3>About This Community</h3>
+          <p>A place for vegans and the vegan-curious to share recipes, tips, personal journeys, and connect with like-minded people.</p>
+          <div class="sidebar-stats" id="sidebarStats">
+            <div class="sidebar-stat">
+              <span class="stat-num" id="totalPosts">--</span>
+              <span class="stat-lbl">Posts</span>
+            </div>
+            <div class="sidebar-stat">
+              <span class="stat-num">6</span>
+              <span class="stat-lbl">Categories</span>
+            </div>
+          </div>
+          <button class="auth-btn" id="sidebarCreateBtn" style="display:none;" onclick="openCreatePostModal()">Create Post</button>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Community Guidelines</h3>
+          <ul class="sidebar-rules">
+            <li><span class="rule-num">1</span> Be kind and respectful</li>
+            <li><span class="rule-num">2</span> Keep it vegan-related</li>
+            <li><span class="rule-num">3</span> No spam or self-promotion</li>
+            <li><span class="rule-num">4</span> Share your own photos when possible</li>
+            <li><span class="rule-num">5</span> Use appropriate categories</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Create Post Modal -->
+  <div class="modal-overlay" id="createPostModal">
+    <div class="social-modal">
+      <div class="modal-header">
+        <h2>Create a Post</h2>
+        <button class="modal-close-btn" onclick="closeCreatePostModal()">&times;</button>
+      </div>
+      <div class="modal-body-content">
+        <form id="createPostForm">
+          <div class="form-group">
+            <label for="postTitle">Title</label>
+            <input type="text" id="postTitle" required maxlength="300" placeholder="Give your post a title">
+          </div>
+          <div class="form-group">
+            <label for="postCategory">Category</label>
+            <select id="postCategory">
+              <option value="discussion">Discussion</option>
+              <option value="recipe">Recipe</option>
+              <option value="tip">Tip</option>
+              <option value="journey">Journey</option>
+              <option value="progress">Progress</option>
+              <option value="news">News</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="postContent">Content</label>
+            <textarea id="postContent" required placeholder="What do you want to share?"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Image (optional)</label>
+            <div class="image-upload-area" id="imageUploadArea" onclick="document.getElementById('postImage').click()">
+              <div id="imageUploadPrompt">
+                <div class="image-upload-icon">📸</div>
+                <div class="image-upload-text">Drag & drop or <span>click to upload</span></div>
+              </div>
+              <div class="image-preview-container" id="imagePreviewContainer">
+                <img id="imagePreviewImg" class="image-preview-img" alt="Preview">
+                <button type="button" class="image-preview-remove" onclick="removeImage(event)">&times;</button>
+              </div>
+            </div>
+            <input type="file" id="postImage" accept="image/jpeg,image/png,image/gif,image/webp" style="display:none;" onchange="previewImage(this)">
+          </div>
+          <div class="modal-error" id="createPostError"></div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-cancel" onclick="closeCreatePostModal()">Cancel</button>
+        <button class="btn btn-submit" id="submitPostBtn" onclick="submitPost()">Post</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="social-toast" id="socialToast"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/feed.js"></script>
+</body>
+</html>
