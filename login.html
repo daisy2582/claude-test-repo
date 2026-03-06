@@ -65,6 +65,7 @@
       toggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
     });
     if (dm === 'true' && toggle) toggle.textContent = '☀️';
+    document.body.classList.add('page-loaded');
   </script>
 </body>
 </html>
