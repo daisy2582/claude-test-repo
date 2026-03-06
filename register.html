@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Vegora Bites</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/social.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">Vegora Bites</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="community.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <main class="auth-page">
+    <div class="auth-container">
+      <div class="auth-card">
+        <div class="auth-header">
+          <span class="auth-icon">🌿</span>
+          <h1>Join the Community</h1>
+          <p>Create your Vegora Bites account and start sharing</p>
+        </div>
+        <form id="registerForm" class="auth-form">
+          <div class="form-group">
+            <label for="regUsername">Username</label>
+            <input type="text" id="regUsername" required minlength="3" maxlength="50" autocomplete="username" placeholder="Choose a username">
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Email</label>
+            <input type="email" id="regEmail" required autocomplete="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="regDisplayName">Display Name</label>
+            <input type="text" id="regDisplayName" required maxlength="100" placeholder="How you want to be known">
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Password</label>
+            <input type="password" id="regPassword" required minlength="6" autocomplete="new-password" placeholder="At least 6 characters">
+          </div>
+          <div class="form-group">
+            <label for="regConfirmPassword">Confirm Password</label>
+            <input type="password" id="regConfirmPassword" required autocomplete="new-password" placeholder="Re-enter your password">
+          </div>
+          <div id="registerError" class="auth-error"></div>
+          <button type="submit" class="btn btn-primary auth-btn">Create Account</button>
+        </form>
+        <div class="auth-footer">
+          <p>Already have an account? <a href="login.html">Log in</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    const dm = localStorage.getItem('darkMode');
+    if (dm === 'true') document.body.classList.add('dark-mode');
+    const toggle = document.getElementById('darkModeToggle');
+    if (toggle) toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+      toggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+    if (dm === 'true' && toggle) toggle.textContent = '☀️';
+  </script>
+</body>
+</html>
