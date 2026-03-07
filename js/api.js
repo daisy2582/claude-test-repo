@@ -2,6 +2,16 @@
  * Vegora Bites - API Service Module
  * Handles all backend communication with JWT auth
  */
+
+// Force update any stale service worker that might intercept API calls
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then(registrations => {
+    registrations.forEach(reg => {
+      reg.update(); // Force check for new SW version
+    });
+  });
+}
+
 const API = (() => {
   const BASE_URL = '';
   const TOKEN_KEY = 'vegora_token';
