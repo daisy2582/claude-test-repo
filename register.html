@@ -10,10 +10,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
-    // Nuclear: unregister ALL service workers to prevent stale SW intercepting API calls
+    // Nuclear: force-update SW to self-destructing version, then unregister everything
     if ('serviceWorker' in navigator) {
+      // Re-register sw.js to get the new self-destructing version
+      navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' })
+        .then(function(reg) { reg.update(); })
+        .catch(function() {});
+      // Also directly unregister all existing registrations
       navigator.serviceWorker.getRegistrations().then(function(registrations) {
         registrations.forEach(function(reg) { reg.unregister(); });
+      });
+    }
+    // Clear all caches from the page context too
+    if ('caches' in window) {
+      caches.keys().then(function(keys) {
+        keys.forEach(function(key) { caches.delete(key); });
       });
     }
   </script>
