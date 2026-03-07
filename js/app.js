@@ -1502,9 +1502,11 @@ function initScrollAnimations() {
 })();
 
 // ===== PWA Service Worker Registration =====
+// DISABLED: Service worker was causing 501 errors on API POST requests
+// by intercepting fetch events. Unregister any existing ones instead.
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  navigator.serviceWorker.getRegistrations().then(function(registrations) {
+    registrations.forEach(function(reg) { reg.unregister(); });
   });
 }
 
