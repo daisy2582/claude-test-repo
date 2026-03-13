@@ -2236,3 +2236,30 @@ body.page-loaded {
     text-align: center;
   }
 }
+
+/* ============================
+   Homepage Nav Auth Integration
+   ============================ */
+.nav-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 12px;
+}
+
+@media (max-width: 768px) {
+  .nav-right {
+    position: fixed;
+    top: 16px;
+    right: 100px;
+    z-index: 1001;
+    margin: 0;
+  }
+  .nav-right .nav-auth-buttons {
+    gap: 4px;
+  }
+  .nav-right .nav-auth-btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
