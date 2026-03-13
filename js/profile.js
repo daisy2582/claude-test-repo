@@ -10,71 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   loadProfile();
 });
 
-function initDarkMode() {
-  const dm = localStorage.getItem('darkMode');
-  if (dm === 'true') document.body.classList.add('dark-mode');
-  const toggle = document.getElementById('darkModeToggle');
-  if (toggle) {
-    if (dm === 'true') toggle.textContent = '☀️';
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-      toggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    });
-  }
-}
-
-function initNav() {
-  const navRight = document.getElementById('navRight');
-  if (!navRight) return;
-
-  if (API.isLoggedIn()) {
-    const user = API.getUser();
-    const avatarContent = user.avatar_url
-      ? `<img src="${API.BASE_URL}${user.avatar_url}" alt="${user.display_name}">`
-      : '🌱';
-
-    navRight.innerHTML = `
-      <div class="nav-user-menu">
-        <div class="nav-user-avatar" id="navAvatarBtn">${avatarContent}</div>
-        <span class="nav-username" id="navUsernameBtn">${user.display_name}</span>
-        <div class="nav-user-dropdown" id="navUserDropdown">
-          <a href="profile.html?user=${user.username}">My Profile</a>
-          <button class="logout-btn" onclick="API.logout()">Log Out</button>
-        </div>
-      </div>
-    `;
-
-    const avatarBtn = document.getElementById('navAvatarBtn');
-    const usernameBtn = document.getElementById('navUsernameBtn');
-    const dropdown = document.getElementById('navUserDropdown');
-    [avatarBtn, usernameBtn].forEach(el => {
-      el.addEventListener('click', (e) => {
-        e.stopPropagation();
-        dropdown.classList.toggle('show');
-      });
-    });
-    document.addEventListener('click', () => dropdown.classList.remove('show'));
-  } else {
-    navRight.innerHTML = `
-      <div class="nav-auth-buttons">
-        <a href="login.html" class="nav-auth-btn nav-login-btn">Log In</a>
-        <a href="register.html" class="nav-auth-btn nav-register-btn">Sign Up</a>
-      </div>
-    `;
-  }
-}
-
-function initHamburger() {
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburger.classList.toggle('active');
-    });
-  }
-}
+// Dark Mode, Navigation, and Hamburger
+// are now provided by js/nav.js (shared module)
 
 async function loadProfile() {
   const params = new URLSearchParams(window.location.search);

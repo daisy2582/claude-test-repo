@@ -3,9 +3,18 @@
  * Login & Register form logic
  */
 document.addEventListener('DOMContentLoaded', () => {
-  // If already logged in, redirect to community
+  // Determine redirect destination from URL parameter or default to community
+  var params = new URLSearchParams(window.location.search);
+  var redirectTo = params.get('redirect') || 'community.html';
+
+  // Sanitize redirect: only allow relative paths within the same site
+  if (redirectTo.indexOf('//') !== -1 || redirectTo.indexOf(':') !== -1) {
+    redirectTo = 'community.html';
+  }
+
+  // If already logged in, redirect immediately
   if (API.isLoggedIn()) {
-    window.location.href = 'community.html';
+    window.location.href = redirectTo;
     return;
   }
 
@@ -25,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const username = document.getElementById('loginUsername').value.trim();
         const password = document.getElementById('loginPassword').value;
         await API.login(username, password);
-        window.location.href = 'community.html';
+        window.location.href = redirectTo;
       } catch (err) {
         errEl.textContent = err.message;
         btn.disabled = false;
@@ -61,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
         await API.register(username, email, displayName, password);
-        window.location.href = 'community.html';
+        window.location.href = redirectTo;
       } catch (err) {
         errEl.textContent = err.message;
         btn.disabled = false;
