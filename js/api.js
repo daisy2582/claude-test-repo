@@ -3,7 +3,18 @@
  * Handles all backend communication with JWT auth
  */
 const API = (() => {
-  const BASE_URL = 'http://localhost:9876';
+  // Dynamic BASE_URL: use relative URLs when served by the backend (same origin),
+  // allow explicit override via window.VEGORA_API_URL, fall back to localhost for local dev
+  const BASE_URL = (() => {
+    if (window.VEGORA_API_URL) return window.VEGORA_API_URL;
+    const origin = window.location.origin;
+    // If served by the backend on port 9876, use relative URLs
+    if (origin.includes('localhost:9876') || origin.includes('127.0.0.1:9876')) return '';
+    // If on ngrok, deployed, or any non-localhost origin, assume same-origin (backend serves frontend)
+    if (!origin.includes('localhost') && !origin.includes('127.0.0.1') && !origin.includes('file://')) return '';
+    // Local dev with separate frontend server (e.g., VS Code Live Server on port 5500)
+    return 'http://localhost:9876';
+  })();
   const TOKEN_KEY = 'vegora_token';
   const USER_KEY = 'vegora_user';
 
